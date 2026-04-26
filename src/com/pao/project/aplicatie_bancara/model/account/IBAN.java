@@ -14,7 +14,7 @@ public final class IBAN {
             throw new IllegalArgumentException("IBAN invalid");
         this.valoare = curatata;
         this.codTara = curatata.substring(0, 2);
-        this.codBanca = curatata.length >= 8 ? curatata.substring(4, 8) : "";
+        this.codBanca = curatata.length() >= 8 ? curatata.substring(4, 8) : "";
     }
 
     public String getValoare() {

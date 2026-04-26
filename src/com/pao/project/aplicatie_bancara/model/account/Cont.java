@@ -1,7 +1,7 @@
 package com.pao.project.aplicatie_bancara.model.account;
 
+import com.pao.project.aplicatie_bancara.exceptions.FonduriInsuficienteException;
 import com.pao.project.aplicatie_bancara.model.card.Card;
-import com.pao.project.aplicatie_bancara.model.exception.FonduriInsuficienteException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -63,6 +63,10 @@ public abstract class Cont {
         sold += suma;
     }
 
+    protected void scadeSold(double suma) {
+        this.sold -= suma;
+    }
+
     public void retrage(double suma) throws FonduriInsuficienteException {
         if(suma <= 0)
             throw new IllegalArgumentException("Suma de retras trebuie sa fie pozitiva");
@@ -73,7 +77,7 @@ public abstract class Cont {
                 "Fonduri insuficiente: sold=" + sold + " " + moneda + ", suma ceruta=" +
                 suma + " " + moneda);
         }
-        sold -= suma;
+        scadeSold(suma);
     }
 
     @Override 

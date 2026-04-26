@@ -73,7 +73,7 @@ public class Card {
         if (!(o instanceof Card)) return false;
         return Objects.equals(numarCard, ((Card) o).numarCard);
     }
- 
+
     @Override
     public int hashCode() {
         return Objects.hash(numarCard);
