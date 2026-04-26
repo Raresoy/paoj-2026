@@ -10,7 +10,7 @@ public class Client extends Persoana implements Comparable<Client> {
     private String adresa;
     private final List<Cont> conturi;
     
-    public Client(String nume, String prenume, String email, String telefon, String cnp, String adresa) {
+    public Client(String nume, String prenume, String cnp, String email, String telefon, String adresa) {
         super(nume, prenume, email, telefon);
         if(cnp == null || cnp.length() != 13)
             throw new IllegalArgumentException("CNP-ul trebuie sa contina 13 cifre");
