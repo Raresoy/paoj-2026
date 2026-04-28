@@ -1,11 +1,15 @@
 package com.pao.laboratory08.exercise1;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     // Calea către fișierul cu date — relativă la rădăcina proiectului
-    private static final String FILE_PATH = "/home/raresoi/paoj-2026/src/com/pao/laboratory08/tests/studenti.txt";
+    private static final String FILE_PATH = "/home/raresoi/paoj-2026/src/com/pao/laboratory08/exercise1/tests/studenti.txt";
 
     public static void main(String[] args) throws Exception {
         // TODO: Implementează conform Readme.md
@@ -23,7 +27,7 @@ public class Main {
 
         List<Student> studenti = citesteStudenti();
         String[] parts = input.split(" ", 2);
-        String comanda = parts[0];
+        String comanda = parts[0].toUpperCase();
 
         try {
             switch(comanda) {

@@ -13,9 +13,9 @@ import com.pao.laboratory08.exercise1.Adresa;
 import com.pao.laboratory08.exercise1.Student;
 
 public class Main {
-    private static final String FILE_PATH = "/home/raresoi/paoj-2026/src/com/pao/laboratory08/tests/studenti.txt";
+    private static final String FILE_PATH = "/home/raresoi/paoj-2026/src/com/pao/laboratory08/exercise1/tests/studenti.txt";
 
-    private static final String OUTPUT_PATH = "/home/raresoi/paoj-2026/src/com/pao/laboratory08/tests/rezultate.txt";
+    private static final String OUTPUT_PATH = "/home/raresoi/paoj-2026/src/com/pao/laboratory08/exercise1/tests/output.txt";
 
     public static void main(String[] args) throws Exception {
         // TODO: Implementează conform Readme.md
