@@ -6,8 +6,18 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Scanner;
 
+/*
+3
+101 2500.00 2024-05-10 CREDIT
+102 45.99 2024-05-11 DEBIT
+103 120.00 2024-05-12 DEBIT
+UPDATE 0 PROCESSED
+READ 0
+UPDATE 2 REJECTED
+PRINT_ALL */
+
 public class RegistruBinar {
-    private static final String FILE_PATH = "output/lab09_ex2.bin";
+    private static final String FILE_PATH = "/home/raresoi/paoj-2026/src/com/pao/laboratory09/exercise2/output/lab09_ex2.bin";
     private static final int RECORD_SIZE = 32;
 
     public static void main(String[] args) {
