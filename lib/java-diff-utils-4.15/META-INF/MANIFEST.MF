@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-Description: The DiffUtils library for computing diffs, applyin
+ g patches, generationg side-by-side view in Java.
+Automatic-Module-Name: io.github.javadiffutils
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: io.github.java-diff-utils
+Built-By: tw
+Bnd-LastModified: 1732399142571
+Bundle-ManifestVersion: 2
+Bundle-Vendor: java-diff-utils
+Import-Package: com.github.difflib,com.github.difflib.algorithm,com.gi
+ thub.difflib.algorithm.myers,com.github.difflib.patch
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.5.0.201709291849
+Export-Package: com.github.difflib.algorithm;uses:="com.github.difflib
+ .patch";version="4.15.0",com.github.difflib.algorithm.myers;uses:="co
+ m.github.difflib.algorithm";version="4.15.0",com.github.difflib;uses:
+ ="com.github.difflib.algorithm,com.github.difflib.patch";version="4.1
+ 5.0",com.github.difflib.patch;uses:="com.github.difflib.algorithm";ve
+ rsion="4.15.0",com.github.difflib.text;uses:="com.github.difflib.patc
+ h";version="4.15.0",com.github.difflib.unifieddiff;uses:="com.github.
+ difflib.patch";version="4.15.0"
+Bundle-Name: java-diff-utils
+Bundle-Version: 4.15.0
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_392
+

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: io.github.javadiffutils
+Bnd-LastModified: 1777378668076
+Build-Jdk: 17.0.18
+Built-By: raresoi
+Bundle-Description: The DiffUtils library for computing diffs, applying 
+ patches, generationg side-by-side view in Java.
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: java-diff-utils
+Bundle-SymbolicName: io.github.java-diff-utils
+Bundle-Vendor: java-diff-utils
+Bundle-Version: 4.15.0
+Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-3.5.0.201709291849
