@@ -135,14 +135,6 @@ public class IOTest {
             System.out.println("EROARE: directorul de parte nu există: " + partDir.getAbsolutePath());
             return;
         }
-        // delete old diffs for this part
-        File resultsDir = new File(partDir, "../../results").getAbsoluteFile();
-        if (resultsDir.exists()) {
-            File[] oldDiffs = resultsDir.listFiles((d, name) -> name.startsWith(partName + "-") && name.endsWith(".diff"));
-            if (oldDiffs != null) {
-                for (File f : oldDiffs) f.delete();
-            }
-        }
         System.out.println();
         System.out.println("╔══════════════════════════════════════════════════════════════╗");
         System.out.printf("║  Partea: %-52s║%n", partName);
@@ -150,41 +142,6 @@ public class IOTest {
         int[] results = runPartDir(partDir, main, printFullOutput);
         System.out.println();
         System.out.printf("Rezultat %s: %d/%d teste trecute.%n", partName, results[0], results[1]);
-    }
-
-    /**
-     * Rulează testele direct dintr-un director plat (fără subdirectoare partX/).
-     * Fișierele .in și .out trebuie să fie direct în directorul dat.
-     *
-     * @param testsDir calea relativă la rădăcina proiectului (e.g. "src/com/pao/laboratory07/exercise2/tests")
-     * @param main     referință la Main::main al exercițiului testat
-     */
-    public static void runFlat(String testsDir, MainMethod main) {
-        runFlat(testsDir, main, false);
-    }
-
-    /**
-     * Rulează testele direct dintr-un director plat (fără subdirectoare partX/), cu opțiune de afișare completă.
-     *
-     * @param testsDir        calea relativă la rădăcina proiectului
-     * @param main            referință la Main::main al exercițiului testat
-     * @param printFullOutput dacă să se afișeze outputul complet la testele eșuate
-     */
-    public static void runFlat(String testsDir, MainMethod main, boolean printFullOutput) {
-        File dir = new File(testsDir);
-        if (!dir.exists() || !dir.isDirectory()) {
-            System.out.println("EROARE: directorul de teste nu există: " + dir.getAbsolutePath());
-            return;
-        }
-        System.out.println();
-        System.out.println("╔══════════════════════════════════════════════════════════════╗");
-        System.out.printf("║  Teste: %-53s║%n", testsDir);
-        System.out.println("╚══════════════════════════════════════════════════════════════╝");
-        int[] results = runPartDir(dir, main, printFullOutput);
-        System.out.println();
-        System.out.println("══════════════════════════════════════════════════════════════");
-        System.out.printf("  Total: %d/%d teste trecute%n", results[0], results[1]);
-        System.out.println("══════════════════════════════════════════════════════════════");
     }
 
     // ── Internal helpers ─────────────────────────────────────────────────────
@@ -334,7 +291,6 @@ public class IOTest {
         if (!resultsDir.exists()) resultsDir.mkdirs();
         String partName = partDir.getName();
         File diffFile = new File(resultsDir, partName + "-" + base + ".diff");
-        if (diffFile.exists()) diffFile.delete();
         try (PrintWriter pw = new PrintWriter(diffFile, "UTF-8")) {
             for (String line : unifiedDiff) {
                 pw.println(line);
