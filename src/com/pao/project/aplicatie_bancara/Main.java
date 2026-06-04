@@ -145,7 +145,7 @@ public class Main {
         }
 
         System.out.println("\n  Toti clientii (sortati alfabetic):");
-        for (Client c : clientService.listeazaTot()) {
+        for (Client c : clientService.listeazaToti()) {
             System.out.println("    " + c);
         }
         System.out.println();
